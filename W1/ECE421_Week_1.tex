@@ -1,0 +1,80 @@
+\documentclass{article}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{enumitem,amssymb}
+\usepackage{pifont}
+\definecolor{darkgreen}{rgb}{0.0, 0.5, 0.0}
+\geometry{left = 1.25in, right=1.25in} % New Stuff Learned!
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
+\newcommand{\done}{\rlap{$\square$}{\raisebox{2pt}{\large\hspace{1pt}\cmark}}
+\hspace{-2.5pt}}
+\newcommand{\wontfix}{\rlap{$\square$}{\large\hspace{1pt}\xmark}}
+\newlist{todolist}{itemize}{2}
+\setlist[todolist]{label=$\square$}
+\doublespacing
+\begin{document}
+\begin{titlepage}
+
+\title{\textbf{CHE374 Week 1}}
+\author{\textit{Sanzhe Feng}}
+\date{\textit{\today}}
+\maketitle
+\end{titlepage}
+\setlength{\parindent}{0pt}
+
+\subsection*{ECE421 Course Info}
+\url{https://docs.google.com/spreadsheets/d/e/2PACX-1vRUK3Fm0IFLHNxh1yKRssrEUolh-COzyp-3zGsovXtdKv_cQR90TpA91kpnkGCS6wzxgqjYWkL5aI1f/pubhtml}
+
+MAKE SURE TO USE OFFICE HOURS!!
+
+\begin{todolist} %[\done]
+    \item \textbf{FRIDAY NIGHT Participation Form}
+    \item \textbf{WEEKEND Asyn Videos}
+    \item \textbf{MONDAY 1PM Vote for questions}
+    \item \textbf{TUESDAY Lecture}
+    \item \textbf{THURSDAY NIGHT Assignment}   
+\end{todolist}
+
+Assignment INFO: \textbf{BOTH CROWDMARK AND QUERCUS}
+
+
+\subsection*{What is Machine Learning}
+Programs a single algorithm that learns from data:
+
+$def \hspace{0.5cm}learning\_algorithm (X, Y)$ 
+
+\hspace{1.1cm}$return algorithm $
+
+\hspace{1.1cm}$algorith(x) = y$
+
+
+
+\subsection*{Why use machine learning}
+For many problems, its hard to program the correct behavior by hand: facial and speech rocogonization.
+Also, the algorithm may need to change throughout time (adapt). And we might believe such algorithm that performs better than human.
+
+\subsection*{Types of Machine Learning}
+
+1. Supervised learning: with labeled input and output. The goal is to predict correct label.
+
+2. Reinforcement learning: reward signal. Algorithm detect how to maximize reward signal when performing a task.
+
+3. Unsupervised learning: unlabled data. Typically used for looking for special patterns in data.
+
+
+\subsection*{A typical ML pipeline}
+
+1. Input representation: what each dimension of x contains
+
+2. Model hypothesis class: $y = g (wx+b)$
+
+3. Training algorithm to find parameters ($w$ and $b$)
+
+4. Test this model
+
+\end{document}
