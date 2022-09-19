@@ -91,5 +91,50 @@ Strategy is to pick random points as K in the input domain or K training sets as
 Problem that caused by initialization. 
 
 \includegraphics[width=0.7\linewidth]{W2V3.png}
+For some number of trials, 
+randomly initialize k centroids, \mu 1 ... \muk
+run k means to obtain c1, .... cn, mu 1,,, mu k
+compute distortion/cost J
+Pick random initialization that yileds min J
+then we pick the results yield by that J
+
+When we increase the value of k, we measure the distortion. The inflection point may be a good choice for the value k picked.
+
+\section*{Principal Component Analysis (PCA)}
+We use PCA to make data in 2D into 1D (Compression). Find a vector, minimize the projection error (the distance between the point and the vector). In general, if we want to reduce from nD to kD, we need k vectors.
+
+Linear regression and PCA: In linear regression, rather than projection, it is the vertical line(to x-axis) between data and the line. In PCA, it is the vertical line to the vector. 
+
+PCA Algorithm:
+preprocessing: input: training sets;
+Mean normalization: mu = sum x, then x_j <--x_j - mu_j
+Fsature Scaling: scale features to have comparable ranges of values. Scale: S_j
+replace x_j <- x_j^i - mu_j/S_j
+i: index of the data in the training set; 
+J: index of the feature, (n dimensions, n features)
+
+Algorithm: (nD->kD)
+1. Compute covariance matrix:
+Sigma = 1/mu sum_i=1^M xi xiT
+2.Compute eigenvectors sigma
+U,S,V = singular value decomposition
+U: a matrixs contains columns that we are looking for. First k columns are what we need previously.
+
+Project x to z, z is a mattrix with columns u
+Ztranspose x successfully project x to z. 
+
+Reversely, x = U_[1-k]z. The data will be still on the line (error comes from compression). But we successfuly convert 1D to 2D
+
+How do we choose K: average squared projection error 1/mu sum ||x - xaprrox||^2
+total variance in the data: 1/mu sum ||x||^2
+
+Choose k s.t. the ratio between these two  <= 0.01
+Since 99.9% of data is retained.
+
+Application/Tips on PCA
+-Data compression
+-Visualization
+-Speed-up learning
+
 
 \end{document}
