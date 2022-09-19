@@ -91,26 +91,29 @@ Strategy is to pick random points as K in the input domain or K training sets as
 Problem that caused by initialization. 
 
 \includegraphics[width=0.7\linewidth]{W2V3.png}
-For some number of trials, 
-randomly initialize k centroids, \mu 1 ... \muk
-run k means to obtain c1, .... cn, mu 1,,, mu k
-compute distortion/cost J
-Pick random initialization that yileds min J
-then we pick the results yield by that J
+
+- For some number of trials, randomly initialize k centroids, $\mu_1 ... \mu_k$, then run k means to obtain $c_1,...c_n, mu_1...mu_k$
+to compute distortion/cost J. Pick random initialization that yileds min J
+then we pick the results yield by that J.
 
 When we increase the value of k, we measure the distortion. The inflection point may be a good choice for the value k picked.
 
 \section*{Principal Component Analysis (PCA)}
-We use PCA to make data in 2D into 1D (Compression). Find a vector, minimize the projection error (the distance between the point and the vector). In general, if we want to reduce from nD to kD, we need k vectors.
+We use PCA to make data in 2D into 1D (Compression): Find a vector, minimize the projection error (the distance between the point and the vector). In general, if we want to reduce from nD to kD, we need k vectors.\\
 
-Linear regression and PCA: In linear regression, rather than projection, it is the vertical line(to x-axis) between data and the line. In PCA, it is the vertical line to the vector. 
+
+Linear regression and PCA: In linear regression, rather than projection, it is the vertical line(to x-axis) between data and the line. In PCA, it is the vertical line to the vector. \\
 
 PCA Algorithm:
-preprocessing: input: training sets;
-Mean normalization: mu = sum x, then x_j <--x_j - mu_j
-Fsature Scaling: scale features to have comparable ranges of values. Scale: S_j
-replace x_j <- x_j^i - mu_j/S_j
+
+Preprocessing: input training sets x from 1 to m;
+Mean normalization: $\mu = \frac{1}{\mu}\sum_{i=1}^m x_j^{(i)}$, then take $x_j$ to be $x_j - \mu_j$
+Feature Scaling: scale features to have comparable ranges of values. 
+
+Scale: S_j; Replace $x_j$ with $\frac{x_j^i - \mu_j}{S_j}$
+
 i: index of the data in the training set; 
+
 J: index of the feature, (n dimensions, n features)
 
 Algorithm: (nD->kD)
