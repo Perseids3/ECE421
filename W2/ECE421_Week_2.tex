@@ -110,7 +110,7 @@ Preprocessing: input training sets x from 1 to m;
 Mean normalization: $\mu = \frac{1}{\mu}\sum_{i=1}^m x_j^{(i)}$, then take $x_j$ to be $x_j - \mu_j$
 Feature Scaling: scale features to have comparable ranges of values. 
 
-Scale: S_j; Replace $x_j$ with $\frac{x_j^i - \mu_j}{S_j}$
+Scale: $S_j$; Replace $x_j$ with $\frac{x_j^i - \mu_j}{S_j}$
 
 i: index of the data in the training set; 
 
@@ -119,31 +119,33 @@ J: index of the feature, (n dimensions, n features)
 Algorithm: (nD->kD)
 
 1. Compute covariance matrix:
-\[\Sigma = \frac{1}{\mu} sum_{i=1}^M (x^i)(x^i)^T
+\[\Sigma = \frac{1}{\mu} \sum_{i=1}^M (x^i)(x^i)^T\]
 This gives a nxn matrix.
 
-2.Compute eigenvectors sigma
+2. Compute eigenvectors sigma
 $U,S,V =$ singular value decomposition ($\Sigma $)
-U: a matrixs contains columns that we are looking for. First k columns are what we need previously.
+U: a matrixs contains columns that we are looking for. First k columns are what we need previously.\\
 
 Project x to z, z is a matrix with columns u
 $z^T x$ successfully project x to z (z transpose is k * n matrix, x is n * 1). 
 
-Reversely, $x = U_{[1-k]}^T x. The data will be still on the line (error comes from compression). But we successfuly convert 1D to 2D.
+Reversely, $x = U_{[1-k]}^T x$. The data will be still on the line (error comes from compression). But we successfuly convert 1D to 2D.\\
 
 How do we choose K: 
 
-average squared projection error:
-$\frac{1}{\mu} \sum_{i=1}^M ||x^i - x_{aprrox}^i||^2$
+Average squared projection error: $\frac{1}{\mu} \sum_{i=1}^M ||x^i - x_{aprrox}^i||^2$
 
-Total variance in the data: $\frac{1}{\mu}\sum_{i=1}^M ||x||^2
+Total variance in the data: $\frac{1}{\mu}\sum_{i=1}^M ||x||^2$
 
-Choose k s.t. the ratio between these two $\leq 0.01$ Since 99.9% of data is retained.
+Choose k s.t. the ratio between these two $\leq 0.01$ Since 99.9\% of data is retained.\\
 
 Application/Tips on PCA
--Data compression
--Visualization
--Speed-up learning
+
+- Data compression
+
+- Visualization
+
+- Speed-up learning
 
 
 \end{document}
