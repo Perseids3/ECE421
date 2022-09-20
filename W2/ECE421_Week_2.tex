@@ -20,7 +20,7 @@
 \begin{document}
 \begin{titlepage}
 
-\title{\textbf{CHE374 Week 1}}
+\title{\textbf{ECE421 Week 2}}
 \author{\textit{Sanzhe Feng}}
 \date{\textit{\today}}
 \maketitle
@@ -46,11 +46,11 @@ In this course, we will be looking at three applications of unsupervised learnin
 
 \section*{Clustering with the k-means algorithm}
 
-k-mean algorithm is used to find the clusters of data.
+k-mean algorithm is used to find the clusters of data.\\
 
-First, randomly select two cluster centroids. Compute the distance between the each data to the centroids, then we assign each data point to the centroid that is closest to it.
+First, randomly select two cluster centroids. Compute the distance between the each data to the centroids, then we assign each data point to the centroid that is closest to it.\\
 
-Then we update the location of the centroids by computing the mean of all the points that have been assigned to each cluster. 
+Then we update the location of the centroids by computing the mean of all the points that have been assigned to each cluster. \\
 
 Reset all data points to be unassigned. Repeat the distance calculation and the relocation of centroids. 
 
@@ -61,7 +61,7 @@ Reset all data points to be unassigned. Repeat the distance calculation and the 
 - random initialization: k cluser centroids $\mu_1...\mu_k$
 
 - Repeat: 
-    for i in 1 to m
+    for i in 1 to n
 
     \hspace{1.1cm}$c^{(i)}$ = index of cluster centroid closest to $x^i$
 
@@ -90,11 +90,10 @@ Strategy is to pick random points as K in the input domain or K training sets as
 \subsection*{Local Optima}
 Problem that caused by initialization. 
 
-\includegraphics[width=0.7\linewidth]{W2V3.png}
+\includegraphics[width=0.5\linewidth]{W2V3.png}
 
 - For some number of trials, randomly initialize k centroids, $\mu_1 ... \mu_k$, then run k means to obtain $c_1,...c_n, mu_1...mu_k$
-to compute distortion/cost J. Pick random initialization that yileds min J
-then we pick the results yield by that J.
+to compute distortion/cost J. Pick random initialization that yileds min Jthen we pick the results yield by that J.\\
 
 When we increase the value of k, we measure the distortion. The inflection point may be a good choice for the value k picked.
 
@@ -116,7 +115,7 @@ i: index of the data in the training set;
 
 J: index of the feature, (n dimensions, n features)
 
-Algorithm: (nD->kD)
+Algorithm: (nD to kD)
 
 1. Compute covariance matrix:
 \[\Sigma = \frac{1}{\mu} \sum_{i=1}^M (x^i)(x^i)^T\]
