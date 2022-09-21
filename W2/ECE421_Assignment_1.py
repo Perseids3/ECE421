@@ -44,16 +44,16 @@ def k_means(X, k):
         
         ### We sum up distorsion for all clusters
         for i in range(len(collection_set)):
-            for j in range(len(collection_set[i])):
-            # print("Cost function: ", cost_function(collection_set[i], centroids_set[i]) )
-                J_new += np.linalg.norm(np.array(collection_set[i][j])-np.array(centroids_set[i]))
-                
+            for j in range(len(collection_set[i])): 
+                J_new += np.square((np.linalg.norm(np.array(collection_set[i][j])-np.array(centroids_set[i]))))
+        
         # print("This is J_old: ", J_old)
         # print("This is J_new: ", J_new)
         
         if J_old != 0:
             if abs((J_old-J_new)/J_old) < 0.005: ### If the distorsion value stops changing rapidly
                 # print("good")
+                # print(abs((J_old-J_new)/J_old))
                 end = False ### Time to end the loop
                 
             else:
